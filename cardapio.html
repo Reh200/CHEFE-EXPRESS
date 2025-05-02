@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio | Zippy’s Pizza</title>
+  <link rel="stylesheet" href="css/cardapio.css">
+</head>
+<body>
+  <header>
+    <h1>Zippy’s Pizza</h1>
+    <nav aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Cardápio</h2>
+
+    <section aria-labelledby="pizzas-tradicionais">
+      <h3 id="pizzas-tradicionais">🍕 Pizzas Tradicionais</h3>
+      <ul>
+        <li>
+          <article>
+            <strong>Calabresa</strong> — Molho, queijo, calabresa e cebola — <span>R$ 35,00</span>
+            <a class="botao" href="#" onclick="enviarPedido(this, 'pizza')">Pedir</a>
+          </article>
+        </li>
+        <li>
+          <article>
+            <strong>Frango com Catupiry</strong> — Frango desfiado, molho e catupiry — <span>R$ 38,00</span>
+            <a class="botao" href="#" onclick="enviarPedido(this, 'pizza')">Pedir</a>
+          </article>
+        </li>
+        <li>
+          <article>
+            <strong>Portuguesa</strong> — Presunto, ovos, cebola, azeitonas e pimentão — <span>R$ 40,00</span>
+            <a class="botao" href="#" onclick="enviarPedido(this, 'pizza')">Pedir</a>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="pizzas-vegetarianas">
+      <h3 id="pizzas-vegetarianas">🌱 Pizzas Vegetarianas</h3>
+      <ul>
+        <li>
+          <article>
+            <strong>Marguerita</strong> — Tomate, manjericão e mussarela — <span>R$ 36,00</span>
+            <a class="botao" href="#" onclick="enviarPedido(this, 'pizza')">Pedir</a>
+          </article>
+        </li>
+        <li>
+          <article>
+            <strong>Brócolis com Alho</strong> — Brócolis, alho frito e queijo — <span>R$ 37,00</span>
+            <a class="botao" href="#" onclick="enviarPedido(this, 'pizza')">Pedir</a>
+          </article>
+        </li>
+        <li>
+          <article>
+            <strong>Vegetariana Especial</strong> — Pimentões coloridos, cebola roxa, milho, champignon e azeitonas — <span>R$ 42,00</span>
+            <a class="botao" href="#" onclick="enviarPedido(this, 'pizza')">Pedir</a>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="bebidas">
+      <h3 id="bebidas">🥤 Bebidas</h3>
+      <ul>
+        <li>
+          <article>
+            <strong>Refrigerante Lata</strong> — Coca-Cola, Guaraná ou Fanta — <span>R$ 5,00</span>
+            <a class="botao" href="#" onclick="enviarPedido(this, 'bebida')">Pedir</a>
+          </article>
+        </li>
+        <li>
+          <article>
+            <strong>Refrigerante 2L</strong> — Coca-Cola, Guaraná ou Fanta — <span>R$ 10,00</span>
+            <a class="botao" href="#" onclick="enviarPedido(this, 'bebida')">Pedir</a>
+          </article>
+        </li>
+        <li>
+          <article>
+            <strong>Suco Natural 500ml</strong> — Laranja, abacaxi ou maracujá — <span>R$ 7,00</span>
+            <a class="botao" href="#" onclick="enviarPedido(this, 'bebida')">Pedir</a>
+          </article>
+        </li>
+        <li>
+          <article>
+            <strong>Água Mineral 500ml</strong> — Com ou sem gás — <span>R$ 3,00</span>
+            <a class="botao" href="#" onclick="enviarPedido(this, 'bebida')">Pedir</a>
+          </article>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Zippy’s Pizza</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
