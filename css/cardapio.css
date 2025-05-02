@@ -1,21 +1,37 @@
-/* Reset de estilos */
+:root {
+  --color-primary: #d62828;
+  --color-accent: #ffcc00;
+  --color-accent-hover: #e0b700;
+  --color-text: #333;
+  --color-light: #fffdf7;
+  --color-success: #198754;
+  --color-white: #fff;
+
+  --font-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  --border-radius: 12px;
+  --transition: 0.3s ease;
+}
+
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Base */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fffdf7;
-  color: #333;
+  font-family: var(--font-base);
+  background-color: var(--color-light);
+  color: var(--color-text);
   line-height: 1.6;
 }
 
 /* Header */
 header {
-  background-color: #d62828;
-  color: white;
+  background-color: var(--color-primary);
+  color: var(--color-white);
   padding: 1.2rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -34,7 +50,7 @@ header h1 {
   white-space: nowrap;
 }
 
-/* Navegação */
+/* Navigation */
 nav {
   display: flex;
   gap: 1.5rem;
@@ -42,12 +58,12 @@ nav {
 }
 
 nav a {
-  color: #fff;
+  color: var(--color-white);
   text-decoration: none;
   font-weight: 600;
   position: relative;
   padding: 0.4rem 0;
-  transition: color 0.3s ease;
+  transition: color var(--transition);
 }
 
 nav a::after {
@@ -57,44 +73,43 @@ nav a::after {
   bottom: 0;
   width: 0%;
   height: 2px;
-  background-color: #ffcc00;
-  transition: width 0.3s ease;
+  background-color: var(--color-accent);
+  transition: width var(--transition);
 }
 
 nav a:hover {
-  color: #ffcc00;
+  color: var(--color-accent);
 }
 
 nav a:hover::after {
   width: 100%;
 }
 
-/* Layout principal */
+/* Main Layout */
 main {
   max-width: 1000px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-/* Estilo de seções */
+/* Sections */
 section {
   margin-bottom: 2rem;
-  background-color: #fff;
+  background-color: var(--color-white);
   padding: 1.5rem;
-  border-radius: 12px;
+  border-radius: var(--border-radius);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 section h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #d62828;
+  color: var(--color-primary);
 }
 
-/* Lista de produtos */
+/* Product List */
 ul {
   list-style: none;
-  padding: 0;
 }
 
 li {
@@ -119,62 +134,51 @@ li strong {
 
 li span {
   font-weight: bold;
-  color: #198754;
-  margin-right: auto;
-  margin-left: 0.5rem;
+  color: var(--color-success);
+  margin: 0.3rem 0.5rem 0.3rem 0;
 }
 
-/* Botão */
-.botao {
-  background-color: #ffcc00;
+/* Button */
+.btn {
+  background-color: var(--color-accent);
   color: #000;
   padding: 0.4rem 1rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s ease;
+  transition: background var(--transition);
   margin-left: 1rem;
 }
 
-.botao:hover {
-  background-color: #e0b700;
+.btn:hover {
+  background-color: var(--color-accent-hover);
 }
 
-/* CSS para definir altura e largura fixas para as imagens */
+/* Image Styling */
 .img-fluid {
-  width: 200px;      /* Largura fixa de 200px */
-  height: 200px;     /* Altura fixa de 200px */
-  object-fit: cover; /* Garantir que a imagem cubra completamente o espaço sem distorcer */
-  border-radius: 10px; /* Bordas arredondadas, opcional */
-  margin: 10px;      /* Margem para dar espaço entre as imagens */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para as imagens */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para efeitos */
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
-/* Efeito de zoom nas imagens ao passar o mouse */
 .img-fluid:hover {
-  transform: scale(1.05); /* Aumenta a imagem ao passar o mouse */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais forte ao passar o mouse */
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsividade para telas menores */
-@media (max-width: 767px) {
-  .img-fluid {
-    width: 150px;  /* Largura ajustada para 150px em telas menores */
-    height: 150px; /* Altura ajustada para 150px em telas menores */
-  }
-}
-
-/* Responsividade para telas médias (tablets) */
+/* Responsiveness */
 @media (max-width: 1024px) {
   .img-fluid {
-    width: 180px;  /* Largura ajustada para 180px em tablets */
-    height: 180px; /* Altura ajustada para 180px em tablets */
+    width: 180px;
+    height: 180px;
   }
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   header {
     flex-direction: column;
     align-items: flex-start;
@@ -203,8 +207,13 @@ li span {
   }
 
   li span,
-  .botao {
+  .btn {
     margin: 0.3rem 0;
+  }
+
+  .img-fluid {
+    width: 150px;
+    height: 150px;
   }
 
   header h1 {
