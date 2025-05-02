@@ -8,99 +8,108 @@
 </head>
 <body>
   <header>
-    <h1>Zippy’s Pizza</h1>
-    <nav aria-label="Navegação principal">
-      <a href="index.html">Início</a>
-      <a href="contato.html">Contato</a>
-    </nav>
+    <div class="container text-center my-4">
+      <h1>Zippy’s Pizza</h1>
+      <nav aria-label="Navegação principal">
+        <a href="index.html" class="mx-3">Início</a>
+        <a href="contato.html" class="mx-3">Contato</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <h2>Cardápio</h2>
+  <main class="container">
+    <h2 class="text-center mb-5">Cardápio</h2>
 
-    <section aria-labelledby="pizzas-tradicionais">
+    <section aria-labelledby="pizzas-tradicionais" class="mb-5">
       <h3 id="pizzas-tradicionais">🍕 Pizzas Tradicionais</h3>
-      <ul>
-        <li>
+      <div class="row">
+        <div class="col-md-4">
           <article>
+            <img class="img-fluid" src="img/calabresa.jpg" alt="Pizza Calabresa">
             <strong>Calabresa</strong> — Molho, queijo, calabresa e cebola — <span>R$ 35,00</span>
-            <a class="botao" href="#" onclick="enviarPedido(this, 'pizza')">Pedir</a>
+            <a class="btn btn-primary mt-2" href="#" onclick="enviarPedido(this, 'pizza')">Pedir</a>
           </article>
-        </li>
-        <li>
+        </div>
+        <div class="col-md-4">
           <article>
+            <img class="img-fluid" src="img/frango-catupiry.jpeg" alt="Pizza Frango com Catupiry">
             <strong>Frango com Catupiry</strong> — Frango desfiado, molho e catupiry — <span>R$ 38,00</span>
-            <a class="botao" href="#" onclick="enviarPedido(this, 'pizza')">Pedir</a>
+            <a class="btn btn-primary mt-2" href="#" onclick="enviarPedido(this, 'pizza')">Pedir</a>
           </article>
-        </li>
-        <li>
+        </div>
+        <div class="col-md-4">
           <article>
+            <img class="img-fluid" src="img/portuguesa.jpeg" alt="Pizza Portuguesa">
             <strong>Portuguesa</strong> — Presunto, ovos, cebola, azeitonas e pimentão — <span>R$ 40,00</span>
-            <a class="botao" href="#" onclick="enviarPedido(this, 'pizza')">Pedir</a>
+            <a class="btn btn-primary mt-2" href="#" onclick="enviarPedido(this, 'pizza')">Pedir</a>
           </article>
-        </li>
-      </ul>
+        </div>
+      </div>
     </section>
-
-    <section aria-labelledby="pizzas-vegetarianas">
+    
+    <section aria-labelledby="pizzas-vegetarianas" class="mb-5">
       <h3 id="pizzas-vegetarianas">🌱 Pizzas Vegetarianas</h3>
-      <ul>
-        <li>
+      <div class="row">
+        <div class="col-md-4">
           <article>
-            <strong>Marguerita</strong> — Tomate, manjericão e mussarela — <span>R$ 36,00</span>
-            <a class="botao" href="#" onclick="enviarPedido(this, 'pizza')">Pedir</a>
+            <img class="img-fluid" src="img/margherita.jpeg" alt="Pizza Marguerita">
+            <strong>Margherita</strong> — Tomate, manjericão e mussarela — <span>R$ 36,00</span>
+            <a class="btn btn-primary mt-2" href="#" onclick="enviarPedido(this, 'pizza')">Pedir</a>
           </article>
-        </li>
-        <li>
+        </div>
+        <div class="col-md-4">
           <article>
+            <img class="img-fluid" src="img/brocolis-alho.jpg" alt="Pizza Brócolis com Alho">
             <strong>Brócolis com Alho</strong> — Brócolis, alho frito e queijo — <span>R$ 37,00</span>
-            <a class="botao" href="#" onclick="enviarPedido(this, 'pizza')">Pedir</a>
+            <a class="btn btn-primary mt-2" href="#" onclick="enviarPedido(this, 'pizza')">Pedir</a>
           </article>
-        </li>
-        <li>
+        </div>
+        <div class="col-md-4">
           <article>
-            <strong>Vegetariana Especial</strong> — Pimentões coloridos, cebola roxa, milho, champignon e azeitonas — <span>R$ 42,00</span>
-            <a class="botao" href="#" onclick="enviarPedido(this, 'pizza')">Pedir</a>
-          </article>
-        </li>
-      </ul>
-    </section>
+            <img class="img-fluid" src="img/quatro-queijos.jpeg" alt="Pizza 4 Queijos">
+            <strong>4 Queijos</strong> — Queijo mozzarella, gorgonzola, parmesão e provolone — <span>R$ 45,00</span>
+            <a class="btn btn-primary mt-2" href="#" onclick="enviarPedido(this, 'pizza')">Pedir</a>
+        </article>
+        </div>
+      </div>
+    </section>    
 
-    <section aria-labelledby="bebidas">
+    <section aria-labelledby="bebidas" class="mb-5">
       <h3 id="bebidas">🥤 Bebidas</h3>
-      <ul>
-        <li>
+      <div class="row">
+        <div class="col-md-6">
           <article>
             <strong>Refrigerante Lata</strong> — Coca-Cola, Guaraná ou Fanta — <span>R$ 5,00</span>
-            <a class="botao" href="#" onclick="enviarPedido(this, 'bebida')">Pedir</a>
+            <a class="btn btn-primary mt-2" href="#" onclick="enviarPedido(this, 'bebida')">Pedir</a>
           </article>
-        </li>
-        <li>
+        </div>
+        <div class="col-md-6">
           <article>
             <strong>Refrigerante 2L</strong> — Coca-Cola, Guaraná ou Fanta — <span>R$ 10,00</span>
-            <a class="botao" href="#" onclick="enviarPedido(this, 'bebida')">Pedir</a>
+            <a class="btn btn-primary mt-2" href="#" onclick="enviarPedido(this, 'bebida')">Pedir</a>
           </article>
-        </li>
-        <li>
+        </div>
+        <div class="col-md-6">
           <article>
             <strong>Suco Natural 500ml</strong> — Laranja, abacaxi ou maracujá — <span>R$ 7,00</span>
-            <a class="botao" href="#" onclick="enviarPedido(this, 'bebida')">Pedir</a>
+            <a class="btn btn-primary mt-2" href="#" onclick="enviarPedido(this, 'bebida')">Pedir</a>
           </article>
-        </li>
-        <li>
+        </div>
+        <div class="col-md-6">
           <article>
             <strong>Água Mineral 500ml</strong> — Com ou sem gás — <span>R$ 3,00</span>
-            <a class="botao" href="#" onclick="enviarPedido(this, 'bebida')">Pedir</a>
+            <a class="btn btn-primary mt-2" href="#" onclick="enviarPedido(this, 'bebida')">Pedir</a>
           </article>
-        </li>
-      </ul>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
+  <footer class="text-center py-4">
     <p>&copy; 2025 Zippy’s Pizza</p>
   </footer>
 
   <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0AtvR2X1XJvNKgmftfU8BvZDgZjHezKK7i5X4X32aKv2bmzP" crossorigin="anonymous"></script>
 </body>
 </html>

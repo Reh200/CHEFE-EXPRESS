@@ -1,5 +1,7 @@
 /* Reset básico */
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,6 +13,9 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Cabeçalho */
@@ -67,6 +72,59 @@ nav a:hover::after {
   width: 100%;
 }
 
+/* Banner */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 10; /* Garantir que o texto fique acima da imagem */
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5); /* Fundo semitransparente para contraste */
+  border-radius: 8px;
+}
+
+.banner-content h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.banner-content button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ff8c00;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.banner-content button:hover {
+  background-color: #e07b00;
+}
+
 /* Conteúdo principal */
 main {
   padding: 3rem 2rem;
@@ -75,7 +133,7 @@ main {
 
 main h2 {
   font-size: 2rem;
-  color: #c94e00;
+  color: #f7b389;
   margin-bottom: 1rem;
 }
 
@@ -109,6 +167,7 @@ footer {
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
+  margin-top: auto;
 }
 
 /* Responsividade */
@@ -132,62 +191,17 @@ footer {
   main {
     padding: 2rem 1rem;
   }
-}
 
-/* Banner com altura reduzida */
-.banner {
-  height: 80vh;  /* de 100vh para 80vh */
-  background: url('../img/banner-pizza.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  padding: 2rem;
-  color: white;
-}
+  .banner-content h2 {
+    font-size: 1.5rem;
+  }
 
-/* Sobreposição escura para legibilidade */
-.banner::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
+  .banner-content p {
+    font-size: 1rem;
+  }
 
-.banner-content {
-  position: relative;
-  z-index: 2;
-  max-width: 700px;
-}
-
-.banner h2 {
-  font-size: 2.3rem;
-  margin-bottom: 1rem;
-}
-
-.banner p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-.banner button {
-  background-color: #ff8c00;
-  color: white;
-  border: none;
-  padding: 0.8rem 1.6rem;
-  border-radius: 25px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.banner button:hover {
-  background-color: #e67700;
-  transform: scale(1.05);
+  .banner-content button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
 }
