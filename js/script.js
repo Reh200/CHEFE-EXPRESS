@@ -1,17 +1,29 @@
-function enviarPedido(elemento, tipo) {
-  const item = elemento.closest('li');
-  const nomeItem = item.querySelector('strong').textContent.trim();
-  const numero = '5514991305822';  // Número de contato no WhatsApp
+  const carrinho = [];
 
-  let mensagem = '';
-  
-  if (tipo === 'pizza') {
-    mensagem = `Olá! Gostaria de pedir uma pizza de ${nomeItem}.`;
-  } else if (tipo === 'bebida') {
-    mensagem = `Olá! Gostaria de pedir uma bebida: ${nomeItem}.`;
+  function enviarPedido(elemento, categoria) {
+    const item = elemento.closest('.item');
+    const nome = item.querySelector('strong, h4').innerText;
+    const preco = item.querySelector('span').innerText;
+    
+    carrinho.push({ nome, preco });
+
+    alert(`${nome} adicionado ao carrinho.`);
   }
 
-  const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+  function finalizarCompra() {
+    if (carrinho.length === 0) {
+      alert("Seu carrinho está vazio!");
+      return;
+    }
 
-  window.open(link, '_blank');
-}
+    let mensagem = "Olá! Gostaria de fazer o seguinte pedido:\n\n";
+    carrinho.forEach((item, i) => {
+      mensagem += `${i + 1}. ${item.nome} - ${item.preco}\n`;
+    });
+
+    const mensagemCodificada = encodeURIComponent(mensagem);
+    const numeroWhatsApp = "SEUNUMEROAQUI"; // Coloque o número do restaurante
+    const link = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
+
+    window.open(link, '_blank');
+  }

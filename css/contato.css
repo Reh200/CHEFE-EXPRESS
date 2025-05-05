@@ -1,30 +1,161 @@
-/* Estilo específico da página de contato */
-form {
-    max-width: 500px;
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Variáveis de cor (modo claro por padrão) */
+  :root {
+    --bg-color: #fff8f0;
+    --text-color: #333;
+    --primary-color: #d62828;
+    --secondary-color: #2a9d8f;
+    --header-text: #fff;
+    --hover-link: #ffd166;
+    --card-bg: #ffffff;
+    --card-border: #eee;
+    --shadow: rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Detecta modo escuro preferido pelo sistema */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-color: #1e1e1e;
+      --text-color: #f0f0f0;
+      --primary-color: #ff4d4d;
+      --secondary-color: #34d399;
+      --header-text: #ffffff;
+      --hover-link: #facc15;
+      --card-bg: #2c2c2c;
+      --card-border: #444;
+      --shadow: rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  body {
+    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  
+  /* Cabeçalho */
+  header {
+    background-color: var(--primary-color);
+    color: var(--header-text);
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 2px 6px var(--shadow);
+  }
+  
+  header nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: var(--header-text);
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  header nav a:hover {
+    color: var(--hover-link);
+  }
+  
+  /* Container */
+  .container {
+    max-width: 1200px;
     margin: auto;
     padding: 20px;
-    background-color: #fafafa;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    background-color: #ff8c00;
+  }
+  
+  /* Títulos */
+  h1, h2, h3 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2rem;
+  }
+  
+  /* Grade responsiva */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  /* Cartões dos itens */
+  .item {
+    background-color: var(--card-bg);
+    padding: 1rem;
+    border: 1px solid var(--card-border);
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px var(--shadow);
+  }
+  
+  .item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px var(--shadow);
+  }
+  
+  /* Imagens dos produtos */
+  .item img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Título do item */
+  .item strong {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+  }
+  
+  /* Descrição */
+  .item p {
+    margin: 0.5rem 0;
+    color: var(--text-color);
+    font-size: 0.95rem;
+  }
+  
+  /* Preço */
+  .item span,
+  .preco {
+    font-weight: bold;
+    color: var(--secondary-color);
+    display: block;
+    margin: 0.75rem 0;
+    font-size: 1rem;
+  }
+  
+  /* Botões */
+  button,
+  .btn {
+    background-color: var(--secondary-color);
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 0.6rem 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
     cursor: pointer;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: #e67e00;
-}
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  button:hover,
+  .btn:hover {
+    background-color: #21867a;
+    transform: translateY(-2px);
+  }
+  

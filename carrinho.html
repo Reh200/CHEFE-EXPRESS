@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho | Chefe Express</title>
+<link rel="stylesheet" href="css/carrinho.css">
+</head>
+<body>
+  <h1>🛒 Carrinho de Pedidos</h1>
+  <div id="lista-pedidos"></div>
+  <button onclick="finalizarPedido()">Finalizar Compra</button>
+
+  <script>
+    const pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
+    const lista = document.getElementById('lista-pedidos');
+
+    if (pedidos.length === 0) {
+      lista.innerHTML = "<p>Seu carrinho está vazio.</p>";
+    } else {
+      pedidos.forEach(pedido => {
+        const div = document.createElement('div');
+        div.className = 'pedido';
+        div.innerText = `${pedido.nome} - ${pedido.preco}`;
+        lista.appendChild(div);
+      });
+    }
+
+    function finalizarPedido() {
+      if (pedidos.length === 0) {
+        alert("Seu carrinho está vazio.");
+        return;
+      }
+
+      let mensagem = "Olá, gostaria de fazer o seguinte pedido:%0A";
+      pedidos.forEach(p => {
+        mensagem += `• ${p.nome} - ${p.preco}%0A`;
+      });
+
+      // Limpa o carrinho
+      localStorage.removeItem('pedidos');
+
+      // Redireciona para o WhatsApp
+      const numero = '559999999999'; // Substitua pelo seu número com DDD e país
+      window.location.href = `https://wa.me/${numero}?text=${mensagem}`;
+    }
+  </script>
+</body>
+</html>
